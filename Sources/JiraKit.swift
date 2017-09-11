@@ -52,6 +52,8 @@ open class Jira {
             return
         }
         
+        Logger.debug("request: \(request)")
+        
         urlSession.dataTask(with: request) { (data, response, error) in
             if let response = response as? HTTPURLResponse {
                 Logger.debug(self, "HTTP status code \(response.statusCode)")
