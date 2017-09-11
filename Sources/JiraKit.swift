@@ -58,7 +58,7 @@ open class Jira {
             }
             
             completion(data, error)
-        }
+        }.resume()
     }
 }
 
