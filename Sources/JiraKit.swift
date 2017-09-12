@@ -9,16 +9,11 @@
 import Foundation
 import SwiftLogger
 
-// project = GOAPPTV AND status = "PR Approved Ready for QA" ORDER BY issuetype
-// project = GOAPPTV AND status in (Open, "PR Approved Ready for QA") AND assignee in (kwatson) ORDER BY issuetype,assignee
-
 public typealias SearchCompletion = (Data?, Error?) -> Void
 
+private let defaultUrlSession = URLSession(configuration: URLSessionConfiguration.default)
+
 open class Jira {
-    
-    static let defaultUrlSession: URLSession = {
-        return URLSession(configuration: URLSessionConfiguration.default)
-    }()
     
     let host: String
     let version: Int
