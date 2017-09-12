@@ -17,7 +17,7 @@ public enum JQLOperator: String {
     case ncontains = "!~"
 }
 
-public struct JQLExpression: CustomStringConvertible {
+public struct JQLExpression {
     
     let field: String
     let op: JQLOperator
@@ -32,7 +32,9 @@ public struct JQLExpression: CustomStringConvertible {
     public init(field: String, operator op: JQLOperator, value: String) {
         self.init(field: field, operator: op, values: [value])
     }
-    
+}
+
+extension JQLExpression: CustomStringConvertible {
     public var description: String {
         var expression: [String] = [field, op.rawValue]
         

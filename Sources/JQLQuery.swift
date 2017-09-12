@@ -27,8 +27,10 @@ public struct JQLQuery {
     public init(clauses: [JQLClause]) {
         self.clauses = clauses
     }
-    
-    public var queryString: String {
+}
+
+extension JQLQuery: CustomStringConvertible {
+    public var description: String {
         return clauses.joined(separator: " ")
     }
 }

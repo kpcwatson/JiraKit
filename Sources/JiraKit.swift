@@ -26,7 +26,7 @@ open class Jira {
     }
     
     public func search(query: JQLQuery, fields: [String]? = nil, completion: @escaping SearchCompletion) {
-        search(query: query.queryString, fields: fields, completion: completion)
+        search(query: String(describing: query), fields: fields, completion: completion)
     }
     
     public func search(query: String, fields: [String]? = nil, completion: @escaping SearchCompletion) {
